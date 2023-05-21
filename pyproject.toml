@@ -5,14 +5,14 @@ description = ""
 authors = ["なるみ"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 
-[tool.poetry.dev-dependencies]
-flake8 = "^5.0.4"
-yapf = "^0.32.0"
-pytest = "^7.2.0"
-codecov = "^2.1.12"
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+yapf = "^0.33.0"
 toml = "^0.10.2"
+pytest = "^7.3.1"
+codecov = "^2.1.13"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
