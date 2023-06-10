@@ -13,7 +13,7 @@ jobs:
       max-parallel: 1
       matrix:
         python-version: [3.9]
-        poetry-version: [1.5.0]
+        poetry-version: [1.5.1]
 
     steps:
       - name: Checkout code
