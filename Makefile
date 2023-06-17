@@ -1,7 +1,7 @@
 install:
 	poetry install
 
-lint:
+lint: install
 	poetry run flake8 -v .
 
 test: install
