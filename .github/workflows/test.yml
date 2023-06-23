@@ -2,6 +2,9 @@ name: Python
 
 on:
   push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build:
@@ -25,10 +28,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: poetry
 
-      - name: Lint
-        run: make lint
+      - name: Install dependencies
+        run: poetry install
 
-      - name: Test
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        run: make cover
+      - name: Lint with flake8
+        run: poetry run flake8 -v
+
+      - name: Test with pytest
+        run: poetry run pytest -v -s --disable-warnings
