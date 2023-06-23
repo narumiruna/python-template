@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-template"
+name = "template"
 version = "0.1.0"
 description = ""
 authors = ["なるみ"]
@@ -18,3 +18,6 @@ isort = "^5.12.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+template = "template.cli:main"
