@@ -2,14 +2,14 @@
 name = "template"
 version = "0.1.0"
 description = ""
-authors = ["なるみ"]
+authors = ["なるみ <toucans-cutouts0f@icloud.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
 flake8 = "^6.0.0"
-yapf = "^0.33.0"
 toml = "^0.10.2"
 pytest = "^7.3.1"
 coverage = "^7.2.7"
