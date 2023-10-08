@@ -1,0 +1,6 @@
+{
+    "name": "python-template",
+    "build": {
+        "dockerfile": "Dockerfile"
+    }
+}
