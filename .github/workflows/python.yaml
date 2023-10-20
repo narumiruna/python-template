@@ -1,22 +1,23 @@
-name: Publish
+name: Python
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
       max-parallel: 1
       matrix:
         python-version: [3.9]
-        poetry-version: [1.5.1]
+        poetry-version: [1.6.1]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: abatilo/actions-poetry@v2
         with:
@@ -27,9 +28,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: poetry
 
-      - name: Publish
-        env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-        run: |
-          poetry build -f wheel
-          poetry publish -u __token__ -p $PYPI_TOKEN
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Lint with flake8
+        run: poetry run flake8 -v
+
+      - name: Test with pytest
+        run: poetry run pytest -v -s --disable-warnings
