@@ -29,10 +29,10 @@ jobs:
           cache: poetry
 
       - name: Install dependencies
-        run: poetry install
+        run: make install
 
-      - name: Lint with flake8
-        run: poetry run flake8 -v
+      - name: Lint
+        run: make lint
 
-      - name: Test with pytest
-        run: poetry run pytest -v -s --disable-warnings
+      - name: Test
+        run: make cover
