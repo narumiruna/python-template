@@ -18,21 +18,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: abatilo/actions-poetry@v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
-
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
           cache: poetry
-
       - name: Install dependencies
         run: make install
-
       - name: Lint
         run: make lint
-
       - name: Test
         run: make cover
