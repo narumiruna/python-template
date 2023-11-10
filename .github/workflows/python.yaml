@@ -9,13 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       max-parallel: 1
       matrix:
         python-version: ["3.9"]
-        poetry-version: ["1.6.1"]
-
+        poetry-version: ["1.7.0"]
     steps:
       - uses: actions/checkout@v4
       - uses: abatilo/actions-poetry@v2
@@ -30,4 +28,4 @@ jobs:
       - name: Lint
         run: make lint
       - name: Test
-        run: make cover
+        run: make test
