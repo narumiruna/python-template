@@ -15,9 +15,9 @@ pytest = "^7.4.2"
 pytest-cov = "^4.1.0"
 toml = "^0.10.2"
 
+[tool.poetry.scripts]
+template = "template.cli:main"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.scripts]
-template = "template.cli:main"
