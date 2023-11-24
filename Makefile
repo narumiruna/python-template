@@ -9,6 +9,6 @@ test:
 
 publish:
 	poetry build -f wheel
-	poetry publish -u __token__ -p $(PYPI_TOKEN)
+	poetry publish
 
 .PHONY: lint test cover
