@@ -11,4 +11,4 @@ publish:
 	poetry build -f wheel
 	poetry publish
 
-.PHONY: lint test cover
+.PHONY: lint test publish
