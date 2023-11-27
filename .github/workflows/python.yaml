@@ -24,8 +24,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: poetry
       - name: Install dependencies
-        run: make install
+        run: poetry install
       - name: Lint
-        run: make lint
+        run: poetry run flake8 -v .
       - name: Test
-        run: make test
+        run: poetry run pytest -v -s --cov=template --cov-report=xml tests
+      - name: Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
