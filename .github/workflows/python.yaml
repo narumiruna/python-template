@@ -29,7 +29,7 @@ jobs:
         run: poetry run flake8 -v .
       - name: Test
         run: poetry run pytest -v -s --cov=template --cov-report=xml tests
-      - name: Codecov
+      - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
