@@ -21,11 +21,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-      - uses: chartboost/ruff-action@v1
-      - name: Install poetry
-        run: pipx install poetry==${{ matrix.poetry-version }}
-      - name: Install dependencies
-        run: poetry install
+      - name: Install
+        run: |
+          pipx install poetry==${{ matrix.poetry-version }}
+          pipx install ruff
+          poetry install
+      - name: Lint
+        run: ruff check .
       - name: Test
         run: poetry run pytest -v -s --cov=. --cov-report=xml tests
       - name: Mypy
