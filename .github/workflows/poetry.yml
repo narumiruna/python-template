@@ -17,15 +17,14 @@ jobs:
         poetry-version: ["1.8.2"]
     steps:
       - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry==${{ matrix.poetry-version }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: poetry
-      - name: Install
-        run: |
-          pipx install poetry==${{ matrix.poetry-version }}
-          pipx install ruff
-          poetry install
+      - name: Install dependencies
+        run: poetry install
       - name: Lint
         run: ruff check .
       - name: Test
