@@ -1,4 +1,4 @@
-name: Python
+name: Poetry
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
     branches: ["main"]
 
 jobs:
-  python:
+  poetry:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
