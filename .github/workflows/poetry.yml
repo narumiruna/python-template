@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Lint
-        run: ruff check .
+        run: poetry run ruff check .
       - name: Test
         run: poetry run pytest -v -s --cov=. --cov-report=xml tests
       - name: Mypy
