@@ -20,11 +20,17 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-      - uses: chartboost/ruff-action@v1
-      - name: Install dependencies
-        run: pip install .
+      - name: Lint
+        run: |
+          pipx install ruff
+          ruff check .
+      - name: Mypy
+        run: |
+          pipx install mypy
+          mypy --install-types --non-interactive .
       - name: Test
         run: |
+          pip install .
           pip install pytest pytest-cov
           pytest -v -s --cov=. --cov-report=xml tests
       - name: Upload coverage reports to Codecov
