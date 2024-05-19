@@ -22,11 +22,11 @@ jobs:
           cache: pip
       - name: Lint
         run: |
-          pipx install ruff
+          pip install ruff
           ruff check .
       - name: Mypy
         run: |
-          pipx install mypy
+          pip install mypy
           mypy --install-types --non-interactive .
       - name: Test
         run: |
