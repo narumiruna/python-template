@@ -20,7 +20,7 @@ jobs:
       - name: Install poetry
         run: |
           pipx install poetry==${{ matrix.poetry-version }}
-          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.create false --local
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
