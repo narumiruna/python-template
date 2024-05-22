@@ -14,25 +14,23 @@ jobs:
       max-parallel: 1
       matrix:
         python-version: ["3.11"]
+        poetry-version: ["1.8.3"]
     steps:
       - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry==${{ matrix.poetry-version }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
+          cache: poetry
+      - name: Install dependencies
+        run: poetry install
       - name: Lint
-        run: |
-          pip install ruff
-          ruff check .
-      - name: Mypy
-        run: |
-          pip install mypy
-          mypy --install-types --non-interactive .
+        run: make lint
+      - name: Type check
+        run: make type
       - name: Test
-        run: |
-          pip install .
-          pip install pytest pytest-cov
-          pytest -v -s --cov=. --cov-report=xml tests
+        run: make cover
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         env:
