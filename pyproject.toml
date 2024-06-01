@@ -10,7 +10,7 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"
 pytest-cov = "^5.0.0"
-ruff = "^0.4.4"
+ruff = "^0.4.7"
 toml = "^0.10.2"
 mypy = "^1.10.0"
 
