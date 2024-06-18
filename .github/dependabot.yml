@@ -10,13 +10,7 @@ updates:
       interval: "weekly"
 
   # Maintain dependencies for npm
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for Composer
-  - package-ecosystem: "composer"
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
