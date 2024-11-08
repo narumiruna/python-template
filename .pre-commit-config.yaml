@@ -18,4 +18,3 @@ repos:
     rev: 0.4.26
     hooks:
       - id: uv-lock
-      - id: uv-export
