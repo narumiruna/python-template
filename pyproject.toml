@@ -21,7 +21,6 @@ dev-dependencies = [
     "pytest-cov>=5.0.0",
     "ruff>=0.7.0",
     "toml>=0.10.2",
-    "pip>=24.2",
 ]
 
 [tool.ruff]
