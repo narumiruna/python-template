@@ -1,2 +1,2 @@
 def test_hello() -> None:
-    print("Hello, World!")
+    print("Hello, world!")
