@@ -1,7 +1,7 @@
 [project]
 name = "python-template"
 version = "0.1.0"
-description = "Add your description here"
+description = ""
 readme = "README.md"
 authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 requires-python = ">=3.12"
