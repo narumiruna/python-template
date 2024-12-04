@@ -15,6 +15,7 @@ repos:
     rev: v1.13.0
     hooks:
       - id: mypy
+        args: [--install-types, --non-interactive]
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.5.5
     hooks:
