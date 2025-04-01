@@ -22,4 +22,4 @@ COPY --from=uv --chown=app:app /app/.venv /app/.venv
 
 ENV PATH="/app/.venv/bin:$PATH"
 
-ENTRYPOINT ["python-template"]
+ENTRYPOINT ["pythontemplate"]

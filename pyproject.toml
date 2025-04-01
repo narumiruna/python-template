@@ -1,5 +1,5 @@
 [project]
-name = "python-template"
+name = "pythontemplate"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-python-template = "python_template.cli:main"
+pythontemplate = "pythontemplate.cli:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -18,10 +18,10 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.13.0",
-    "pytest>=8.3.3",
-    "pytest-cov>=6.0.0",
-    "ruff>=0.7.3",
+ "mypy>=1.15.0",
+ "pytest>=8.3.3",
+ "pytest-cov>=6.0.0",
+ "ruff>=0.7.3",
 ]
 
 [tool.ruff]
