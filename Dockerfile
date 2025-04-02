@@ -1,5 +1,7 @@
 # https://docs.astral.sh/uv/guides/integration/docker/#non-editable-installs
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS uv
+ARG PYTHON_VERSION=3.12
+ARG DEBIAN_VERSION=bookworm
+FROM ghcr.io/astral-sh/uv:python${PYTHON_VERSION}-${DEBIAN_VERSION}-slim AS uv
 
 WORKDIR /app
 
@@ -15,7 +17,7 @@ ADD . /app
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev --no-editable
 
-FROM python:3.12-slim-bookworm
+FROM python:${PYTHON_VERSION}-slim-${DEBIAN_VERSION}
 
 WORKDIR /app
 
