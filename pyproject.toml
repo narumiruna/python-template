@@ -5,9 +5,7 @@ description = ""
 readme = "README.md"
 authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 requires-python = ">=3.12"
-dependencies = [
-    "loguru>=0.7.3",
-]
+dependencies = ["loguru>=0.7.3"]
 
 [project.scripts]
 pythontemplate = "pythontemplate.cli:main"
@@ -17,12 +15,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = [
- "mypy>=1.15.0",
- "pytest>=8.3.3",
- "pytest-cov>=6.0.0",
- "ruff>=0.7.3",
-]
+dev = ["mypy>=1.15.0", "pytest>=8.3.3", "pytest-cov>=6.0.0", "ruff>=0.7.3"]
 
 [tool.ruff]
 exclude = ["build"]
@@ -52,3 +45,9 @@ filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.mypy]
 ignore_missing_imports = true
+
+[tool.bumpversion]
+current_version = "0.1.0"
+tag = true
+commit = true
+pre_commit_hooks = ["uv lock", "git add uv.lock"]
