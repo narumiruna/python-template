@@ -1,3 +1,6 @@
+format:
+	uv run ruff format .
+
 lint:
 	uv run ruff check .
 
@@ -10,5 +13,7 @@ test:
 publish:
 	uv build -f wheel
 	uv publish
+
+all: format lint type test
 
 .PHONY: lint test publish
