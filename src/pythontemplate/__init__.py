@@ -10,7 +10,7 @@ logger.configure(
         {
             "sink": RichHandler(show_time=False, omit_repeated_times=False, show_level=False, show_path=False),
             "level": LOGURU_LEVEL,
-            "format": "{time:YYYY-MM-DD HH:mm:ss,SSS} {level: <8} '{name}:{function}:{line}' {message}",
+            # "format": "{time:YYYY-MM-DD HH:mm:ss,SSS} {level: <8} '{name}:{function}:{line}' {message}",
         },
     ]
 )
