@@ -7,10 +7,11 @@ authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 requires-python = ">=3.12"
 dependencies = [
     "loguru>=0.7.3",
+    "typer>=0.16.0",
 ]
 
 [project.scripts]
-pythontemplate = "pythontemplate.cli:main"
+pythontemplate = "pythontemplate.cli:app"
 
 [build-system]
 requires = ["hatchling"]
