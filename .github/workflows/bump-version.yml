@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   bump-version:
@@ -34,8 +33,6 @@ jobs:
           # Create a personal access token https://github.com/settings/tokens
           # Add your role to bypass list in the branch protection settings
           # github-token: ${{ secrets.GH_TOKEN }}
-          # Settings -> Actions -> General -> Workflow permissions
-          # Allow GitHub Actions to create and approve pull requests
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check
         if: steps.bump.outputs.bumped == 'true'
