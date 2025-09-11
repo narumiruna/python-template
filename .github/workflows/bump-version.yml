@@ -19,7 +19,6 @@ permissions:
 jobs:
   bump-version:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout the code
         uses: actions/checkout@v5
@@ -31,10 +30,7 @@ jobs:
           BUMPVERSION_TAG: "true"
         with:
           args: ${{ inputs.bump-type }}
-          # Create a personal access token https://github.com/settings/tokens
-          # Add your role to bypass list in the branch protection settings
-          # github-token: ${{ secrets.GH_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
       - name: Check
         if: steps.bump.outputs.bumped == 'true'
         run: |
