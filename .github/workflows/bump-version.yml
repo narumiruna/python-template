@@ -30,7 +30,8 @@ jobs:
           BUMPVERSION_TAG: "true"
         with:
           args: ${{ inputs.bump-type }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Use a Personal Access Token (PAT) to ensure the publish workflow is triggered on tag push
+          github-token: ${{ secrets.PAT_TOKEN }}
       - name: Check
         if: steps.bump.outputs.bumped == 'true'
         run: |
