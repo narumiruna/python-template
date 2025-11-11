@@ -5,10 +5,7 @@ description = ""
 readme = "README.md"
 authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 requires-python = ">=3.12"
-dependencies = [
-    "loguru>=0.7.3",
-    "typer>=0.16.0",
-]
+dependencies = ["loguru>=0.7.3", "typer>=0.20.0"]
 
 [project.scripts]
 pythontemplate = "pythontemplate.cli:app"
@@ -18,7 +15,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["mypy>=1.15.0", "pytest>=8.3.3", "pytest-cov>=6.0.0", "ruff>=0.7.3"]
+dev = ["pytest-cov>=6.0.0", "pytest>=8.3.3", "ruff>=0.7.3", "ty>=0.0.1a26"]
 
 [tool.ruff]
 exclude = ["build"]
@@ -43,11 +40,11 @@ select = [
 [tool.ruff.lint.isort]
 force-single-line = true
 
+[tool.ty.rules]
+unresolved-import = "ignore"
+
 [tool.pytest.ini_options]
 filterwarnings = ["ignore::DeprecationWarning"]
-
-[tool.mypy]
-ignore_missing_imports = true
 
 [tool.bumpversion]
 current_version = "0.1.0"
