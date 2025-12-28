@@ -19,5 +19,6 @@ repos:
     hooks:
       - id: ty-check
         name: ty-check
-        entry: ty check .
+        entry: uv run ty check .
         language: system
+        pass_filenames: false
