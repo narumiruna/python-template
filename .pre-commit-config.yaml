@@ -5,6 +5,10 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: https://github.com/crate-ci/typos
+    rev: typos-dict-v0.13.13
+    hooks:
+      - id: typos
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.10
     hooks:
@@ -20,4 +24,4 @@ repos:
       - id: ty-check
         name: ty-check
         entry: ty check .
-        language: python
+        language: system
