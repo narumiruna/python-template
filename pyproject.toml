@@ -15,15 +15,9 @@ requires = ["uv_build>=0.8.17,<0.9.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = [
-    "pytest-cov>=6.0.0",
-    "pytest>=8.3.3",
-    "ruff>=0.7.3",
-    "ty>=0.0.8",
-]
+dev = ["pytest-cov>=6.0.0", "pytest>=8.3.3", "ruff>=0.7.3", "ty>=0.0.8"]
 
 [tool.ruff]
-exclude = ["build"]
 line-length = 120
 
 [tool.ruff.lint]
