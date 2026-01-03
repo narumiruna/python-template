@@ -15,10 +15,7 @@ repos:
     rev: 0.9.18
     hooks:
       - id: uv-lock
-  - repo: local
+  - repo: https://github.com/narumiruna/ty-pre-commit
+    rev: v0.0.1
     hooks:
       - id: ty-check
-        name: ty-check
-        entry: uv run ty check .
-        language: system
-        pass_filenames: false
