@@ -3,8 +3,8 @@ name = "pythontemplate"
 version = "0.0.0"
 description = ""
 readme = "README.md"
-authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 requires-python = ">=3.12"
+authors = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 dependencies = ["loguru>=0.7.3", "typer>=0.20.0"]
 
 [project.scripts]
@@ -15,22 +15,22 @@ requires = ["uv_build>=0.8.17,<0.9.0"]
 build-backend = "uv_build"
 
 [dependency-groups]
-dev = ["pytest-cov>=6.0.0", "pytest>=8.3.3", "ruff>=0.7.3", "ty>=0.0.8"]
+dev = ["pytest>=8.3.3", "pytest-cov>=6.0.0", "ruff>=0.7.3", "ty>=0.0.8"]
 
 [tool.ruff]
 line-length = 120
 
 [tool.ruff.lint]
 select = [
-    "B",   # flake8-bugbear
-    "C",   # flake8-comprehensions
-    "E",   # pycodestyle errors
-    "F",   # pyflakes
-    "I",   # isort
-    "N",   # pep8-naming
-    "SIM", # flake8-simplify
-    "UP",  # pyupgrade
-    "W",   # pycodestyle warnings
+  "B",  # flake8-bugbear
+  "C",  # flake8-comprehensions
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # isort
+  "N",  # pep8-naming
+  "SIM",  # flake8-simplify
+  "UP",  # pyupgrade
+  "W",  # pycodestyle warnings
 ]
 
 [tool.ruff.lint.per-file-ignores]
