@@ -22,13 +22,26 @@ line-length = 120
 
 [tool.ruff.lint]
 select = [
+  "ANN",  # flake8-annotations
+  "ASYNC",  # flake8-async
   "B",  # flake8-bugbear
+  "BLE",  # flake8-blind-except
   "C",  # flake8-comprehensions
+  "DTZ",  # flake8-datetimez
   "E",  # pycodestyle errors
   "F",  # pyflakes
+  "FURB",  # refurb
   "I",  # isort
   "N",  # pep8-naming
+  "PERF",  # perflint
+  "PIE",  # flake8-pie
+  "PTH",  # flake8-use-pathlib
+  "RET",  # flake8-return
+  "RSE",  # flake8-raise
+  "RUF",  # ruff-specific rules
   "SIM",  # flake8-simplify
+  "TID",  # flake8-tidy-imports
+  "TRY",  # tryceratops
   "UP",  # pyupgrade
   "W",  # pycodestyle warnings
 ]
