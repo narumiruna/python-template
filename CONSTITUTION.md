@@ -10,7 +10,7 @@
 - Define the core objectives of the project.
 - All objectives are considered co-equal unless explicitly stated otherwise.
 
-## Documentation Principles
+## Principles
 
 - Language MUST be concise and precise.
 - Scope and responsibility boundaries MUST be explicit.
