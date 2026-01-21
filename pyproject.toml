@@ -5,13 +5,21 @@ description     = ""
 readme          = "README.md"
 requires-python = ">=3.12"
 authors         = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
-dependencies    = ["loguru>=0.7.3", "typer>=0.20.0"]
+dependencies    = [
+  "loguru>=0.7.3",
+  "typer>=0.21.1",
+]
 
 [project.scripts]
 pythontemplate = "pythontemplate.cli:app"
 
 [dependency-groups]
-dev = ["pytest>=8.3.3", "pytest-cov>=6.0.0", "ruff>=0.7.3", "ty>=0.0.8"]
+dev = [
+  "pytest>=9.0.2",
+  "pytest-cov>=7.0.0",
+  "ruff>=0.14.13",
+  "ty>=0.0.13",
+]
 
 [build-system]
 requires      = ["uv_build>=0.8.17,<0.9.0"]
