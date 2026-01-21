@@ -6,7 +6,6 @@ readme          = "README.md"
 requires-python = ">=3.12"
 authors         = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 dependencies    = [
-  "loguru>=0.7.3",
   "typer>=0.21.1",
 ]
 
