@@ -48,6 +48,7 @@ select = [
   "F",      # pyflakes
   "FURB",   # refurb
   "I",      # isort
+  "G",      # flake8-logging-format
   "N",      # pep8-naming
   "PERF",   # perflint
   "PIE",    # flake8-pie
