@@ -1,11 +1,11 @@
 format:
-	uv run ruff format .
+	uv run ruff format
 
 lint:
-	uv run ruff check --fix .
+	uv run ruff check --fix
 
 type:
-	uv run ty check .
+	uv run ty check
 
 test:
 	uv run pytest -v -s --cov=src tests
@@ -16,4 +16,4 @@ publish:
 
 all: format lint type test
 
-.PHONY: lint test publish
+.PHONY: format lint type test publish
