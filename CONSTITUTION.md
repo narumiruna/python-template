@@ -19,6 +19,13 @@
 - Rules MUST be stated in enforceable terms and avoid ambiguity.
 - Foundational rules MUST NOT be duplicated across documents.
 
+## Fundamental Constraints
+
+- All outputs and changes MUST be treated as untrusted unless and until explicitly verified.
+- Abstractions MUST address a concrete, current problem that exists at the time of introduction.
+- Architectural boundaries defined by the project MUST NOT be violated.
+- New dependencies MUST NOT be introduced without explicit justification.
+
 ## Interpretation Rule
 
 - CONSTITUTION.md defines what must never be violated.
