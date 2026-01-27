@@ -58,7 +58,10 @@ select = [
   "RUF",    # ruff-specific rules
   "SIM",    # flake8-simplify
   "TID",    # flake8-tidy-imports
-  "TRY",    # tryceratops
+  "TRY002",  # raise-vanilla-class
+  "TRY004",  # type-check-without-type-error
+  "TRY203",  # useless-try-except
+  "TRY300",  # try-consider-else
   "UP",     # pyupgrade
   "W",      # pycodestyle warnings
 ]
