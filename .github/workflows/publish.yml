@@ -16,10 +16,10 @@ jobs:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
-          python-version:  ${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
       - name: Publish
         env:
           UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: |
-          uv build --wheel
+          uv build
           uv publish
