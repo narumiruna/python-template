@@ -1,4 +1,4 @@
-name: Docker
+name: Container
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       - "v*.*.*"
 
 jobs:
-  docker:
+  container:
     runs-on: ubuntu-latest
     steps:
       # https://docs.docker.com/build/ci/github-actions/manage-tags-labels/
@@ -17,6 +17,7 @@ jobs:
         with:
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}
+            ghcr.io/${{ github.repository }}
           flavor: |
             latest=auto
           tags: |
@@ -36,6 +37,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.PAT_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
