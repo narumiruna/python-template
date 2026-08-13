@@ -6,7 +6,7 @@ readme          = "README.md"
 requires-python = ">=3.12"
 authors         = [{ name = "narumi", email = "toucans-cutouts0f@icloud.com" }]
 dependencies    = [
-  "typer>=0.27.0",
+  "typer>=0.27.1",
 ]
 
 [project.scripts]
@@ -16,8 +16,8 @@ pythontemplate = "pythontemplate.cli:app"
 dev = [
   "pytest>=9.1.1",
   "pytest-cov>=7.1.0",
-  "ruff>=0.16.0",
-  "ty>=0.0.64",
+  "ruff>=0.16.2",
+  "ty>=0.0.71",
 ]
 
 [build-system]
