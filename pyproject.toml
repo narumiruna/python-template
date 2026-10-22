@@ -16,8 +16,8 @@ pythontemplate = "pythontemplate.cli:app"
 dev = [
   "pytest>=9.1.1",
   "pytest-cov>=7.1.0",
-  "ruff>=0.17.0",
-  "ty>=0.0.87",
+  "ruff>=0.17.1",
+  "ty>=0.0.90",
 ]
 
 [build-system]

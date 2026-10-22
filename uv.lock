@@ -277,8 +277,8 @@ requires-dist = [{ name = "typer", specifier = ">=0.27.3" }]
 dev = [
     { name = "pytest", specifier = ">=9.1.1" },
     { name = "pytest-cov", specifier = ">=7.1.0" },
-    { name = "ruff", specifier = ">=0.17.0" },
-    { name = "ty", specifier = ">=0.0.87" },
+    { name = "ruff", specifier = ">=0.17.1" },
+    { name = "ty", specifier = ">=0.0.90" },
 ]
 
 [[package]]
