@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   container:
-    name: Build and publish container
+    name: container
     permissions:
       contents: read
       packages: write # Push images to GitHub Container Registry.

@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   bump-version:
-    name: Bump version
+    name: bump-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code

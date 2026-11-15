@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   publish:
-    name: Publish to PyPI
+    name: publish
     permissions:
       contents: read
       id-token: write # Authenticate to PyPI with GitHub OIDC.
@@ -36,7 +36,7 @@ jobs:
           uv build
           uv publish --trusted-publishing always
   release:
-    name: Create GitHub release
+    name: release
     needs: publish
     if: github.ref_type == 'tag'
     permissions:
