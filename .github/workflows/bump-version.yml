@@ -14,18 +14,27 @@ on:
           - patch
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   bump-version:
+    name: bump-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          enable-cache: false
       - name: Bump version
         id: bump
-        uses: callowayproject/bump-my-version@1.8.1
+        uses: callowayproject/bump-my-version@22dbc5c88dba0ce5552078b48278d96467264b6d # 1.8.1
         env:
           BUMPVERSION_TAG: "true"
         with:
@@ -34,5 +43,8 @@ jobs:
           github-token: ${{ secrets.PAT_TOKEN }}
       - name: Check
         if: steps.bump.outputs.bumped == 'true'
+        env:
+          PREVIOUS_VERSION: ${{ steps.bump.outputs.previous-version }}
+          CURRENT_VERSION: ${{ steps.bump.outputs.current-version }}
         run: |
-          echo "Version was bumped from ${{ steps.bump.outputs.previous-version }} to ${{ steps.bump.outputs.current-version }}!"
+          printf 'Version was bumped from %s to %s!\n' "$PREVIOUS_VERSION" "$CURRENT_VERSION"
